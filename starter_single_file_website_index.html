@@ -1,0 +1,169 @@
+<!doctype html>
+<!--
+  Starter single-file website (index.html)
+  - Save as index.html and open in your browser to preview.
+  - To host: upload to GitHub Pages, Netlify, Vercel, or any static host.
+  - To make the contact form work: use Formspree (https://formspree.io/) or Netlify Forms — instructions below.
+  - Replace images and text where marked. Colors and fonts are easy to change in the :root CSS variables.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bunker Tattoo Studio — Home</title>
+  <meta name="description" content="Professional services — short tagline here." />
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
+  <!-- Basic styling (responsive) -->
+  <style>
+    :root{
+      --bg:#0d0d0d; --fg:#f5f5f5; --accent:#ffffff; --muted:#9ca3af; --max:1100px;
+      --radius:12px; --gap:20px; font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--fg);line-height:1.5}
+    .wrap{max-width:var(--max);margin:30px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:54px;height:54px;border-radius:10px;background:#111111,#7dd3c9);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+    nav a:hover{background:#f1f5f9;color:var(--fg)}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;margin-top:28px}
+    .hero-inner{padding:28px;border-radius:16px;background:#111111,rgba(14,165,164,0.02))}
+    h1{font-size:clamp(1.6rem,2.6vw,2.4rem);margin:0 0 10px}
+    p.lead{margin:0;color:var(--muted)}
+    .cta{margin-top:16px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{border:1px solid #222222;color:var(--fg);background:transparent}
+
+    main{margin-top:28px;display:grid;grid-template-columns:1fr;gap:22px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+    .card{padding:16px;border-radius:12px;border:1px solid #222222;background:white}
+
+    footer{margin-top:28px;padding:20px;border-top:1px solid #eef2f3;color:var(--muted);display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+
+    /* Contact form */
+    form{display:grid;gap:10px}
+    input,textarea,select{width:100%;padding:10px;border:1px solid #222222;border-radius:8px}
+    textarea{min-height:120px}
+
+    /* Responsive layouts */
+    @media(min-width:860px){
+      .hero{grid-template-columns:1fr 420px}
+      header{margin-bottom:6px}
+    }
+
+    /* small niceties */
+    .small{font-size:0.9rem;color:var(--muted)}
+    .map-placeholder{width:100%;height:260px;border-radius:12px;border:1px dashed #e6eef0;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">BTS</div>
+        <div>
+          <div style="font-weight:700">Bunker Tattoo Studio</div>
+          <div class="small">Black & Grey Realism • Custom Tattoo Art</div>
+        </div>
+      </div>
+      <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <h1>Black & Grey tattoo studio creating clean, detailed, custom artwork.</h1>
+        <p class="lead">Specialized in black & grey realism, fine line, and custom concept designs.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#contact">Get a free quote</a>
+          <a class="btn btn-outline" href="#services">Our services</a>
+        </div>
+
+        <main style="margin-top:18px">
+          <section id="services">
+            <h2 style="margin:0 0 8px">Services</h2>
+            <div class="cards">
+              <div class="card"><strong>Service A</strong><p class="small">Short description of service A and why it helps customers.</p></div>
+              <div class="card"><strong>Service B</strong><p class="small">Short description of service B.</p></div>
+              <div class="card"><strong>Service C</strong><p class="small">Short description of service C.</p></div>
+            </div>
+          </section>
+
+          <section id="portfolio" style="margin-top:14px">
+            <h2 style="margin:0 0 8px">Portfolio</h2>
+            <div class="cards">
+              <div class="card">Project 1 — short note</div>
+              <div class="card">Project 2 — short note</div>
+              <div class="card">Project 3 — short note</div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <aside style="padding:16px;border-radius:12px;background:#1a1a1a;border:1px solid #222222">
+        <div style="font-weight:700;margin-bottom:8px">Contact & Location</div>
+        <div class="small">Address: 123 Main Street, City</div>
+        <div class="small">Phone: +123 456 789</div>
+        <div style="margin-top:12px" class="map-placeholder">Google Maps embed goes here</div>
+
+        <div style="margin-top:12px">
+          <a href="#contact" class="btn btn-primary" style="display:inline-block">Contact us</a>
+        </div>
+      </aside>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <h2>Contact us</h2>
+      <p class="small">Send a message and we'll reply within 24 hours.</p>
+
+      <!-- Example static contact form (replace action to use a service) -->
+      <!-- To use Formspree: set action="https://formspree.io/f/your-id" method="POST" -->
+      <form id="contactForm" onsubmit="handleSubmit(event)">
+        <input type="text" name="name" placeholder="Your name" required />
+        <input type="email" name="email" placeholder="Your email" required />
+        <input type="text" name="subject" placeholder="Subject" />
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button class="btn btn-primary" type="submit">Send message</button>
+        <div id="formMsg" class="small" style="margin-top:8px"></div>
+      </form>
+
+      <script>
+        function handleSubmit(e){
+          e.preventDefault();
+          // Demo behavior: show a fake success message.
+          // Replace with real form action (Formspree, Netlify Forms, or your backend).
+          const msg = document.getElementById('formMsg');
+          msg.textContent = 'Sending...';
+          setTimeout(()=>{ msg.textContent = 'Thank you — we received your message.'; e.target.reset(); },900);
+        }
+      </script>
+    </section>
+
+    <footer>
+      <div class="small">© <span id="year"></span> Bunker Tattoo Studio — All rights reserved.</div>
+      <div class="small">Designed with ♥ • <a href="#contact">Contact</a></div>
+    </footer>
+  </div>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+  <!--
+    Helpful next steps:
+    1) Replace the placeholder text and "Bunker Tattoo Studio".
+    2) Replace the map-placeholder: use an iframe Google Maps embed or <iframe src="https://www.google.com/maps/embed?..." width="100%" height="260" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    3) For contact form: sign up at https://formspree.io/ -> get your form endpoint and set the <form action="https://formspree.io/f/XXX" method="POST">, then remove the onsubmit handler.
+    4) Hosting suggestions: GitHub Pages (free) or Netlify (free) or Vercel. For GitHub Pages: push this file to a repo named username.github.io and the site will be live.
+    5) To connect a custom domain, follow your host's instructions (Netlify/GitHub Pages). For HTTPS, most hosts provide a free certificate automatically.
+    6) To show your business location in Google Search/Maps: create a Google Business Profile and set the website URL to this site.
+  -->
+</body>
+</html>
